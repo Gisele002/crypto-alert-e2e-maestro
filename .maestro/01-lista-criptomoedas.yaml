@@ -1,0 +1,11 @@
+
+appId: com.anonymous.cryptoalert
+---
+- launchApp:
+    clearState: true
+
+- assertVisible: "Bitcoin"
+- assertVisible: "Ethereum"
+- assertVisible: "Cardano"
+
+- takeScreenshot: "01-lista-criptomoedas"
