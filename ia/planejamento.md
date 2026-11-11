@@ -29,14 +29,19 @@ A IA avisou que os textos e nomes de botões eram suposições a confirmar no ap
 
 ## Cenários selecionados
 
-1. Abrir o app e exibir a lista de criptomoedas
-2. Estado vazio da lista de alertas
-3. Criar alerta de preço
-4. Validação do formulário vazio
-5. Excluir alerta (se der tempo)
+Foram selecionados quatro cenários para os testes E2E:
+
+1. Abrir o app e exibir a lista de criptomoedas.
+2. Verificar o estado vazio da lista de alertas.
+3. Criar um alerta de preço.
+4. Verificar a validação do formulário vazio.
+
+O cenário de exclusão de alerta foi deixado de fora do planejamento dos fluxos implementados.
 
 ## Análise crítica
 
-- **Aproveitado:** (preencher depois de abrir o app)
-- **Corrigido:** (preencher: textos e botões que a IA assumiu e que eram diferentes no app real)
-- **Descartado:** conversão de moedas, por depender de cotação vinda da API, que muda e deixa o teste instável. (confirmar no app)
+- **Aproveitado:** Foram aproveitadas as sugestões da IA para testar a lista de criptomoedas, o estado vazio dos alertas, a criação de um alerta e a validação do formulário. Esses cenários representam funcionalidades importantes do aplicativo.
+
+- **Corrigido:** Os textos e nomes dos botões sugeridos pela IA foram conferidos com o código-fonte do aplicativo. Foram utilizados os textos encontrados no projeto, como "Alerts", "New Alert", "Create Alert" e "Save Alert", em vez de considerar os nomes sugeridos pela IA como se já estivessem confirmados.
+
+- **Descartado:** Os cenários de conversão de moedas e exclusão de alerta não foram incluídos nos quatro fluxos preparados. A conversão foi deixada de fora porque envolve valores de cotação que podem variar. A exclusão também ficou fora do escopo dos testes preparados nesta etapa.
