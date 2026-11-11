@@ -1,0 +1,18 @@
+
+appId: com.anonymous.cryptoalert
+---
+- launchApp:
+    clearState: true
+
+- tapOn: "Alerts"
+- tapOn: "New Alert"
+
+- assertVisible: "Create Alert"
+- assertVisible: "Select cryptocurrency"
+- assertVisible: "0.00"
+
+- assertVisible:
+    text: "Save Alert"
+    enabled: false
+
+- takeScreenshot: "04-formulario-vazio"
