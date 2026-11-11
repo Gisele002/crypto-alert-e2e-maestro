@@ -1,0 +1,12 @@
+
+appId: com.anonymous.cryptoalert
+---
+- launchApp:
+    clearState: true
+
+- tapOn: "Alerts"
+
+- assertVisible: "No alerts yet"
+- assertVisible: "Create Alert"
+
+- takeScreenshot: "02-alertas-vazio"
