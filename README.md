@@ -1,56 +1,92 @@
-# Welcome to your Expo app 👋
+# Crypto Alert – Testes E2E com Maestro
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## 1. Sobre o projeto
 
-## Get started
+Este repositório tem como objetivo desenvolver testes automatizados End-to-End (E2E) para o aplicativo Crypto Alert, utilizando a ferramenta Maestro.
 
-1. Install dependencies
+Os testes buscam verificar funcionalidades principais do aplicativo, como visualização de criptomoedas, consulta de alertas, criação de alertas de preço e validação do formulário.
 
-   ```bash
-   npm install
-   ```
+## 2. Tecnologias utilizadas
 
-2. Start the app
+- React Native
+- Expo
+- TypeScript
+- Maestro
+- Android
 
-   ```bash
-   npx expo start
-   ```
+## 3. Estrutura dos testes
 
-In the output, you'll find options to open the app in a
+Os fluxos automatizados estão organizados na pasta `.maestro`:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+| Arquivo | Descrição |
+|---|---|
+| 01-lista-criptomoedas.yaml | Verifica a exibição das criptomoedas. |
+| 02-alertas-vazio.yaml | Verifica o estado vazio da tela de alertas. |
+| 03-criar-alerta.yaml | Verifica a criação de um alerta de preço. |
+| 04-validacao-formulario.yaml | Verifica a validação do formulário vazio. |
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 4. Configuração do ambiente
 
-## Get a fresh project
+### Pré-requisitos
 
-When you're ready, run:
+- Node.js instalado.
+- npm instalado.
+- Android Studio com emulador configurado ou dispositivo Android.
+- Maestro instalado e configurado no PATH.
+- Depuração USB habilitada, caso utilize um celular físico.
+
+### Instalação
+
+Clone o repositório:
 
 ```bash
-npm run reset-project
+git clone https://github.com/Gisele002/crypto-alert-e2e-maestro.git
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Entre na pasta:
 
-### Other setup steps
+```bash
+cd crypto-alert-e2e-maestro
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Instale as dependências:
 
-## Learn more
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## 5. Executando o aplicativo
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Com um emulador Android aberto ou celular conectado, execute:
 
-## Join the community
+```bash
+npx expo run:android
+```
 
-Join our community of developers creating universal apps.
+O comando realiza a compilação e instalação do aplicativo no dispositivo Android.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 6. Executando os testes
+
+Com o aplicativo instalado e aberto no dispositivo, execute todos os fluxos:
+
+```bash
+maestro test .maestro
+```
+
+Para executar um fluxo individual:
+
+```bash
+maestro test .maestro/01-lista-criptomoedas.yaml
+```
+
+Substitua o nome do arquivo para executar os demais fluxos.
+
+## 7. Evidências dos testes
+
+As evidências de execução serão organizadas na pasta `evidencias/`, contendo registros visuais dos fluxos automatizados.
+
+**Status:** execução dos testes e coleta das evidências pendentes de validação no dispositivo Android.
+
+## 8. Considerações finais
+
+O projeto busca aplicar conceitos de testes automatizados E2E, utilizando o Maestro para verificar o comportamento das principais funcionalidades do aplicativo Crypto Alert.
